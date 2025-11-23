@@ -122,7 +122,7 @@ git clone https://github.com/vanzan01/cursor-memory-bank.git
 
 After extracting it from the ZIP file, follow the steps below.
 
-- Copy the `.cursor` and `custom_modes` folders to the project directory
+- Copy the `.cursor` folder to the project directory
 
 Note: other documents are not necessary for memory bank operation, they are explanatory documents. You can copy them to a folder like `memory_bank_documents`.
 
@@ -151,41 +151,27 @@ For each mode, configure as follows (If MCPs are showing, you can keep them on, 
 1. **VAN MODE** (Initialization)
    - **Name**: 🔍 VAN
    - **Tools**: Enable "Codebase Search", "Read File", "Terminal", "List Directory", "Fetch Rules"
-   - **Advanced options**: Paste from `custom_modes/van_instructions.md`
-
-
-<img src="assets/van_mode_1.png" height="300" style="display: inline-block;"/> <img src="assets/van_mode_2.png" height="300" style="display: inline-block;"/>
+   - **Advanced options**: Paste from `.cursor/commands/van.md`
 
 2. **PLAN MODE** (Task Planning)
    - **Name**: 📋 PLAN
    - **Tools**: Enable "Codebase Search", "Read File", "Terminal", "List Directory"
-   - **Advanced options**: Paste from `custom_modes/plan_instructions.md`
-
-<img src="assets/plan_mode_1.png" height="300"/> <img src="assets/plan_mode_2.png" height="300" style="display: inline-block;"/>
+   - **Advanced options**: Paste from `.cursor/commands/plan.md`
 
 3. **CREATIVE MODE** (Design Decisions)
    - **Name**: 🎨 CREATIVE
    - **Tools**: Enable "Codebase Search", "Read File", "Terminal", "List Directory", "Edit File", "Fetch Rules"
-   - **Advanced options**: Paste from `custom_modes/creative_instructions.md`
-
-<img src="assets/creative_mode_1.png" height="300"/> <img src="assets/creative_mode_2.png" height="300" style="display: inline-block;"/>
+   - **Advanced options**: Paste from `.cursor/commands/creative.md`
 
 4. **IMPLEMENT MODE** (Code Implementation)
    - **Name**: ⚒️ IMPLEMENT
    - **Tools**: Enable all tools
-   - **Advanced options**: Paste from `custom_modes/implement_instructions.md`
+   - **Advanced options**: Paste from `.cursor/commands/implement.md`
 
-<img src="assets/implement_mode_1.png" height="300"/> <img src="assets/implement_mode_2.png" height="300" style="display: inline-block;"/>
-
-5. **REFLECT & ARHIVE MODE** (Review)
+5. **REFLECT & ARCHIVE MODE** (Review)
    - **Name**: 🔍 REFLECT or ARCHIVE
    - **Tools**: Enable "Codebase Search", "Read File", "Terminal", "List Directory"
-   - **Advanced options**: Paste from `custom_modes/reflect_archive_instructions.md`
-
-<img src="assets/reflect_mode_1.png" height="300"/> <img src="assets/reflect_mode_2.png" height="300" style="display: inline-block;"/>
-   
-
-> **Note**: REFLECT and ARCHIVE instructions are combined in a single file and mode to optimize for Cursor's character and custom mode limits  while maintaining functionality. Thanks to GitHub user @joshmac007 for implementing this optimization.
+   - **Advanced options**: Paste from `.cursor/commands/reflect.md`
 
 For additional help on setting up custom modes in Cursor, refer to the [official Cursor documentation on custom modes](https://docs.cursor.com/chat/custom-modes).
 
@@ -287,7 +273,7 @@ The Memory Bank system is actively being developed and improved. Key points to u
 - [Cursor Custom Modes Documentation](https://docs.cursor.com/chat/custom-modes)
 - [Memory Bank Upgrade Guide](memory_bank_upgrade_guide.md)
 - [CREATIVE Mode and Claude's "Think" Tool](creative_mode_think_tool.md)
-- Mode-specific instruction files in the `custom_modes/` directory
+- Mode-specific instruction files in the `.cursor/commands/` directory
 
 ---
 
