@@ -105,10 +105,7 @@ For a detailed explanation of how Memory Bank implements these principles, see t
 ### Prerequisites
 
 - **Cursor Editor**: Version 0.48 or higher is required.
-- **Custom Modes**: Feature must be enabled in Cursor (Settings → Features → Chat → Custom modes).
-<img src="assets/open_custom_modes.png" alt="Opening Custom Modes Menu"/>
-
-- **AI Model**: Claude 4 Sonnet or Claude 4 Opus is recommended for best results, especially for CREATIVE mode's "Think" tool methodology.
+- **AI Model**: Claude 4 Sonnet or Claude 4 Opus is recommended for best results.
 
 ### Step 1: Get the Files
 
@@ -126,63 +123,55 @@ After extracting it from the ZIP file, follow the steps below.
 
 Note: other documents are not necessary for memory bank operation, they are explanatory documents. You can copy them to a folder like `memory_bank_documents`.
 
-### Step 2: Setting Up Custom Modes in Cursor
+### Step 2: Verification
 
-**This is the most critical and challenging part of the setup.** You'll need to manually create six custom modes in Cursor and copy the instruction content from the provided files:
+Ensure that the `.cursor/rules` folder is present in your project root. This folder contains the `.mdc` rule files that power the Memory Bank system.
 
-#### How to Add a Custom Mode in Cursor
+Cursor will automatically detect these rules. No further configuration is required.
 
-1. Open Cursor and click on the mode selector in the chat panel
-2. Select "Add custom mode"
-<img src="assets/add_custom_mode.png" alt="Add Custom Mode"/>
+## Usage
 
-3. In the configuration screen:
-   - Enter the mode name (you can include emoji icons like 🔍, 📋, 🎨, ⚒️ by copy-pasting them at the beginning of the name)
-   - Select an icon from Cursor's limited predefined options
-   - Add a shortcut (optional)
-   - Check the required tools
-   - Click on **Advanced options**
-   - In the empty text box that appears at the bottom, paste the custom instruction content from the corresponding file
+The new system leverages **Cursor Project Rules** to automatically load the necessary context and instructions based on your commands.
 
-#### Mode Configuration
+1. **Initialize the Project**:
+   - Open a new chat in Cursor.
+   - Type **"VAN"** (or "Initialize Memory Bank").
+   - The system will load the initialization rules, analyze your project, and determine the complexity level.
 
-For each mode, configure as follows (If MCPs are showing, you can keep them on, they probably won't work):
+2. **Follow the Workflow**:
+   - Based on the complexity analysis, the system will guide you through the appropriate phases:
+     - **PLAN**: Type "PLAN" to create an implementation plan.
+     - **CREATIVE**: Type "CREATIVE" to enter the design phase.
+     - **IMPLEMENT**: Type "IMPLEMENT" to start coding.
+     - **REFLECT**: Type "REFLECT" to review work.
+     - **ARCHIVE**: Type "ARCHIVE" to finalize documentation.
 
-1. **VAN MODE** (Initialization)
-   - **Name**: 🔍 VAN
-   - **Tools**: Enable "Codebase Search", "Read File", "Terminal", "List Directory", "Fetch Rules"
-   - **Advanced options**: Paste from `.cursor/commands/van.md`
+3. **Technical Validation (QA)**:
+   - At any time, type **"QA"** to run technical checks and validation.
 
-2. **PLAN MODE** (Task Planning)
-   - **Name**: 📋 PLAN
-   - **Tools**: Enable "Codebase Search", "Read File", "Terminal", "List Directory"
-   - **Advanced options**: Paste from `.cursor/commands/plan.md`
+### Mode Aliases
 
-3. **CREATIVE MODE** (Design Decisions)
-   - **Name**: 🎨 CREATIVE
-   - **Tools**: Enable "Codebase Search", "Read File", "Terminal", "List Directory", "Edit File", "Fetch Rules"
-   - **Advanced options**: Paste from `.cursor/commands/creative.md`
+You can use these keywords to trigger specific modes:
 
-4. **IMPLEMENT MODE** (Code Implementation)
-   - **Name**: ⚒️ IMPLEMENT
-   - **Tools**: Enable all tools
-   - **Advanced options**: Paste from `.cursor/commands/implement.md`
+- `/van` or `VAN`: Initialization Mode
+- `/plan` or `PLAN`: Planning Mode
+- `/creative` or `CREATIVE`: Creative Design Mode
+- `/act` or `IMPLEMENT`: Implementation Mode
+- `/reflect` or `REFLECT`: Reflection Mode
 
-5. **REFLECT & ARCHIVE MODE** (Review)
-   - **Name**: 🔍 REFLECT or ARCHIVE
-   - **Tools**: Enable "Codebase Search", "Read File", "Terminal", "List Directory"
-   - **Advanced options**: Paste from `.cursor/commands/reflect.md`
-
-For additional help on setting up custom modes in Cursor, refer to the [official Cursor documentation on custom modes](https://docs.cursor.com/chat/custom-modes).
+## Core Files and Their Purposes
 
 ### QA Functionality
 
 QA is not a separate custom mode but rather a set of validation functions that can be called from any mode. You can invoke QA capabilities by typing "QA" in any mode when you need to perform technical validation. This approach provides flexibility to conduct verification at any point in the development process.
 
-## Basic Usage
+## Usage
+
+The system is designed to be intuitive. Instead of manually switching modes, you simply interact with the AI using standard commands.
+
+### Workflow Overview
 
 1. **Start with VAN Mode**:
-   - Switch to VAN mode in Cursor
    - Type "VAN" to initiate the initialization process
    - VAN will analyze your project structure and determine complexity
 
@@ -196,19 +185,19 @@ QA is not a separate custom mode but rather a set of validation functions that c
 <img src="assets/chat_van.png" height="50"/> <img src="assets/chat_plan.png" height="50" style="display: inline-block;"/> <img src="assets/chat_implement.png" height="50" style="display: inline-block;"/> <img src="assets/chat_creative.png" height="50" style="display: inline-block;"/> <img src="assets/chat_implement.png" height="50" style="display: inline-block;"/> <img src="assets/chat_reflect.png" height="50" style="display: inline-block;"/> <img src="assets/chat_archive.png" height="50" style="display: inline-block;"/>
 
 3. **Mode-Specific Commands**:
-   ```
-   VAN - Initialize project and determine complexity
-   PLAN - Create detailed implementation plan
-   CREATIVE - Explore design options for complex components
-   IMPLEMENT - Systematically build planned components
-   REFLECT - Review and document lessons learned
-   ARCHIVE - Create comprehensive documentation
-   QA - Validate technical implementation (can be called from any mode)
-   ```
+   The system recognizes these keywords to load the appropriate rules and context:
+
+   - **VAN**: Initialize project and determine complexity
+   - **PLAN**: Create detailed implementation plan
+   - **CREATIVE**: Explore design options for complex components
+   - **IMPLEMENT** (or `/act`): Systematically build planned components
+   - **REFLECT**: Review and document lessons learned
+   - **ARCHIVE**: Create comprehensive documentation
+   - **QA**: Validate technical implementation
 
 4. **Starting to work with your project**:
    
-After successfully installing Memory Bank...
+   After successfully installing Memory Bank, simply open a chat and type **"VAN"** to begin.
 
 ## Core Files and Their Purposes
 
@@ -239,17 +228,12 @@ graph LR
 
 ### Common Issues
 
-1. **Mode not responding correctly**:
-   - Verify custom instructions were copied completely (this is the most common issue)
-   - Ensure the correct tools are enabled for each mode
-   - Check that you've switched to the correct mode before issuing commands
-   - Make sure you pasted the instructions in the "Advanced options" text box
+1. **Rules not loading**:
+   - Ensure the `.cursor` folder is in the root of your project.
+   - Verify that `.cursor/rules` contains the `.mdc` files.
+   - Try explicitly mentioning the mode name (e.g., "Switch to PLAN mode").
 
-2. **Rules not loading**:
-   - Make sure the `.cursor/rules/isolation_rules/` directory is in the correct location
-   - Verify file permissions allow reading the rule files
-
-3. **Command execution issues**:
+2. **Command execution issues**:
    - Ensure you're running commands from the correct directory
    - Verify platform-specific commands are being used correctly
 
