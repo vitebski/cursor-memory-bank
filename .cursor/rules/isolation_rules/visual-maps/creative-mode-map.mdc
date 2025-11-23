@@ -24,10 +24,10 @@ graph TD
     SelectPhase --> PhaseType{"Creative<br>Phase Type?"}
     
     %% Creative Phase Types
-    PhaseType -->|"UI/UX<br>Design"| UIPhase["UI/UX CREATIVE PHASE<br>Core/creative-phase-uiux.md"]
-    PhaseType -->|"Architecture<br>Design"| ArchPhase["ARCHITECTURE CREATIVE PHASE<br>Core/creative-phase-architecture.md"]
-    PhaseType -->|"Data Model<br>Design"| DataPhase["DATA MODEL CREATIVE PHASE<br>Core/creative-phase-data.md"]
-    PhaseType -->|"Algorithm<br>Design"| AlgoPhase["ALGORITHM CREATIVE PHASE<br>Core/creative-phase-algorithm.md"]
+    PhaseType -->|"UI/UX<br>Design"| UIPhase["UI/UX CREATIVE PHASE<br>Phases/CreativePhase/creative-phase-uiux.mdc"]
+    PhaseType -->|"Architecture<br>Design"| ArchPhase["ARCHITECTURE CREATIVE PHASE<br>Phases/CreativePhase/creative-phase-architecture.mdc"]
+    PhaseType -->|"Data Model<br>Design"| DataPhase["DATA MODEL CREATIVE PHASE<br>Phases/CreativePhase/creative-phase-data.mdc"]
+    PhaseType -->|"Algorithm<br>Design"| AlgoPhase["ALGORITHM CREATIVE PHASE<br>Phases/CreativePhase/creative-phase-algorithm.mdc"]
     
     %% UI/UX Creative Phase
     UIPhase --> UI_Problem["Define UI/UX<br>Problem"]
