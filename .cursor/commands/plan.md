@@ -3,6 +3,11 @@
 ## Use When
 Creating detailed implementation plans for Level 2+ tasks.
 
+## ⛔ TOOL USAGE POLICY
+- **ALLOWED**: `read_file`, `search_codebase`, `list_dir`
+- **FORBIDDEN**: `edit_file`, `run_terminal_cmd`, `write_file` (Do NOT modify code or run commands)
+- **EXCEPTION**: You may use `edit_file` / `write_file` ONLY to update `memory-bank/tasks.md`, `memory-bank/activeContext.md`, or `memory-bank/progress.md`.
+
 ## Action Sequence
 1.  **Acknowledge:** "🔄 Switching to PLAN Mode..."
 2.  **Load Rules:**
